@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Raffle extends Model
 {
+    public $guarded = ['id'];
+
     use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
